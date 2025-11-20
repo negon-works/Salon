@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon - Transform Your Look</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons (needed for navigation and social details) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for the project, loading Poppins for the specific heading */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf8f3; /* Soft off-white/beige background */
+            color: #333;
+        }
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* New Poppins class for the desired bold heading style */
+        .poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Theme colors */
+        .theme-primary {
+            background-color: #d1a590; /* Soft reddish-brown button color */
+        }
+        .theme-dark {
+            background-color: #a87a68; /* Darker brown for the footer */
+        }
+        .text-theme-primary {
+            color: #d1a590;
+        }
+
+        .btn-primary {
+            background-color: #d1a590; 
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #b98e79;
+        }
+
+        .section-heading {
+            color: #3d3434;
+        }
+        /* Custom styles for filled SVG icons in contact section */
+        .filled-icon {
+            fill: currentColor; /* Ensures the SVG uses the color set by Tailwind's text-theme-primary */
+        }
+
+        /* FIX: Adjusting space above anchor targets to prevent the sticky header from covering the content */
+        section[id] {
+            /* Changed from 6rem to 5rem for a better fit */
+            scroll-margin-top: 5rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="bg-[#fcf8f3] py-6 shadow-sm sticky top-0 z-10 border-b border-gray-100">
+        <!-- Container max-w-6xl for better side padding -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <!-- LOGO -->
+                <a href="#home" class="text-2xl playfair font-bold text-[#3d3434]">Salon</a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#home" class="text-[#3d3434] hover:text-theme-primary transition duration-150">Home</a>
+                    <a href="#services" class="text-[#3d3434] hover:text-theme-primary transition duration-150">Services</a>
+                    <a href="#about" class="text-[#3d3434] hover:text-theme-primary transition duration-150">About</a>
+                    <a href="#contact" class="text-[#3d3434] hover:text-theme-primary transition duration-150">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-[#3d3434] p-2 rounded-md hover:bg-gray-100">
+                    <i data-lucide="menu" id="menu-icon"></i>
+                    <i data-lucide="x" class="hidden" id="close-icon"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Content -->
+            <nav id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 pb-2 border-t pt-2">
+                <a href="#home" class="block py-2 px-3 text-[#3d3434] hover:bg-gray-100 rounded-md transition duration-150">Home</a>
+                <a href="#services" class="block py-2 px-3 text-[#3d3434] hover:bg-gray-100 rounded-md transition duration-150">Services</a>
+                <a href="#about" class="block py-2 px-3 text-[#3d3434] hover:bg-gray-100 rounded-md transition duration-150">About</a>
+                <a href="#contact" class="block py-2 px-3 text-[#3d3434] hover:bg-gray-100 rounded-md transition duration-150">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <!-- Text Content -->
+                <div class="space-y-6">
+                    <h1 class="playfair text-5xl md:text-6xl font-bold leading-tight text-[#3d3434]">
+                        Transform Your Look
+                    </h1>
+                    <p class="text-gray-600 text-lg max-w-md">
+                        We're bring transcendent salon experience to a glamorous, fresh-cut and vibrant salon experts.
+                    </p>
+                    <!-- Button -->
+                    <a href="#contact" class="inline-block btn-primary shadow-lg hover:shadow-xl">Book Now</a>
+                </div>
+
+                <!-- Image -->
+                <div class="rounded-xl overflow-hidden shadow-2xl">
+                    <img src="hero.webp" 
+                         alt="Stylist working on a client's hair in a salon" 
+                         class="w-full h-auto object-cover md:h-[500px] transition duration-300 hover:scale-[1.02]"
+                         onerror="this.onerror=null;this.src='https://placehold.co/800x600/b98e79/ffffff?text=Salon+Hero';"
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-12 md:py-20 bg-white border-t border-b border-gray-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="section-heading playfair text-4xl font-bold mb-10">Our Services</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service 1: Haircuts -->
+                    <div class="p-4 flex flex-col items-center text-center">
+                        <div class="w-[120px] h-[120px] mb-4 rounded-full overflow-hidden shadow-md transition duration-300 hover:scale-105">
+                            <img src="haircut.jpg" 
+                                 alt="Haircut service image" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x120/d1a590/ffffff?text=Cut';"
+                            >
+                        </div>
+                        <h3 class="playfair text-2xl font-semibold mb-2 text-[#3d3434]">Haircuts</h3>
+                        <p class="text-gray-500 text-sm">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        </p>
+                    </div>
+
+                    <!-- Service 2: Hair Coloring -->
+                    <div class="p-4 flex flex-col items-center text-center">
+                        <div class="w-[120px] h-[120px] mb-4 rounded-full overflow-hidden shadow-md transition duration-300 hover:scale-105">
+                            <img src="haircoloring.webp" 
+                                 alt="Hair Coloring service image" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x120/b98e79/ffffff?text=Color';"
+                            >
+                        </div>
+                        <h3 class="playfair text-2xl font-semibold mb-2 text-[#3d3434]">Hair Coloring</h3>
+                        <p class="text-gray-500 text-sm">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        </p>
+                    </div>
+
+                    <!-- Service 3: Styling -->
+                    <div class="p-4 flex flex-col items-center text-center">
+                        <div class="w-[120px] h-[120px] mb-4 rounded-full overflow-hidden shadow-md transition duration-300 hover:scale-105">
+                            <img src="styling.webp" 
+                                 alt="Styling service image" 
+                                 class="w-full h-full object-cover"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/120x120/a87a68/ffffff?text=Style';"
+                            >
+                        </div>
+                        <h3 class="playfair text-2xl font-semibold mb-2 text-[#3d3434]">Styling</h3>
+                        <p class="text-gray-500 text-sm">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <!-- Image -->
+                <div class="rounded-xl overflow-hidden shadow-2xl">
+                    <img src="about.jpg" 
+                         alt="Stylist blow-drying a client's hair" 
+                         class="w-full h-auto object-cover md:h-[450px] transition duration-300 hover:scale-[1.02]"
+                         onerror="this.onerror=null;this.src='https://placehold.co/800x600/d1a590/ffffff?text=About+Us';"
+                    >
+                </div>
+
+                <!-- Text Content -->
+                <div class="space-y-5">
+                    <h2 class="playfair text-4xl font-bold text-[#3d3434]">About Us</h2>
+                    <p class="text-gray-600">
+                        We provide customer exceptional care and using high quality products and techniques. Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna. Our mission is to ensure every client leaves feeling refreshed, confident, and absolutely stunning.
+                    </p>
+                    <p class="text-gray-600">
+                        From classic cuts to the latest coloring trends, our dedicated team of experienced professionals is here to cater to all your beauty needs. We believe in quality, creativity, and customer satisfaction above all else.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 md:py-20 bg-white border-t border-gray-100">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center md:text-left">
+                    <h2 class="section-heading playfair text-4xl font-bold mb-4">Contact Us</h2>
+                    <p class="text-gray-600 mb-10 max-w-xl mx-auto md:mx-0">
+                        We'd love to hear from you! Reach out directly or fill out the form to schedule your next appointment.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-10 items-start">
+                    
+                    <!-- Left Side: CTA and Info (Sizing and font adjusted) -->
+                    <div class="space-y-6 md:pt-4">
+                        <!-- 'poppins' class applied here for the desired font style -->
+                        <p class="poppins text-2xl font-bold text-[#3d3434]">
+                            Ready to book your Appointment?
+                        </p>
+                        <p class="text-gray-600">
+                            Schedule your transformative salon experience today. We look forward to creating your next beautiful look!
+                        </p>
+
+                        <!-- Contact Info (FILLED ICONS - using inline SVG) -->
+                        <div class="pt-4 space-y-4 text-gray-600 text-lg"> <!-- Added text-lg here -->
+                            <!-- Map Pin Icon (Filled) -->
+                            <div class="flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-6 h-6 text-theme-primary filled-icon">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                                </svg>
+                                <span>1234 Main St, Anytown, USA</span>
+                            </div>
+                            
+                            <!-- Mail Icon (Filled) -->
+                            <div class="flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-6 h-6 text-theme-primary filled-icon">
+                                    <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
+                                </svg>
+                                <span>info@salon.com</span>
+                            </div>
+                            
+                            <!-- Phone Icon (Filled) -->
+                            <div class="flex items-center space-x-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="w-6 h-6 text-theme-primary filled-icon">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.24.2 2.45.57 3.57.11.35.03.75-.24 1.02l-2.2 2.2z"/>
+                                </svg>
+                                <span>123-456-7890</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Contact Form -->
+                    <div class="bg-[#fcf8f3] p-8 md:p-10 rounded-xl shadow-xl border border-gray-100">
+                        <form class="space-y-5 text-left">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" 
+                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-theme-primary focus:border-theme-primary transition duration-150" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" 
+                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-theme-primary focus:border-theme-primary transition duration-150" required>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone (Optional)</label>
+                                <input type="tel" id="phone" name="phone" placeholder="123-456-7890" 
+                                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-theme-primary focus:border-theme-primary transition duration-150">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="3" placeholder="How can we help you today?" 
+                                          class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-theme-primary focus:border-theme-primary transition duration-150" required></textarea>
+                            </div>
+                            <div class="text-center pt-2">
+                                <button type="submit" class="btn-primary w-full shadow-xl">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="theme-dark text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            
+            <!-- Social Media Icons (Standard Lucide outlines are used here) -->
+            <div class="flex justify-center space-x-5 mt-2 mb-4 text-white">
+                <a href="#" class="hover:text-theme-primary transition duration-150" aria-label="Instagram">
+                    <i data-lucide="instagram" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="hover:text-theme-primary transition duration-150" aria-label="Facebook">
+                    <i data-lucide="facebook" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="hover:text-theme-primary transition duration-150" aria-label="YouTube">
+                    <i data-lucide="youtube" class="w-6 h-6"></i>
+                </a>
+            </div>
+
+            <!-- Policy Links -->
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="#" class="hover:text-theme-primary transition duration-150">Privacy Policy</a>
+                <span class="text-gray-300">|</span>
+                <a href="#" class="hover:text-theme-primary transition duration-150">Terms of Service</a>
+            </div>
+            
+            <p class="mt-4">&copy; 2025 Salon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons and Add JavaScript for Mobile Menu -->
+    <script>
+        // Only initializes icons that use data-lucide (Navigation menu and Footer social links)
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (menuButton && mobileMenu) {
+            menuButton.addEventListener('click', () => {
+                // Toggle visibility of the menu
+                mobileMenu.classList.toggle('hidden');
+                // Toggle between menu and close icons
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Close menu when a navigation link is clicked (for better UX on mobile)
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
+            });
+        }
+        
+        // Fix the smooth scrolling logic to prevent the '#' is not a valid selector error
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                
+                // Prevent default behavior only if it's a valid internal hash link
+                if (targetId.length > 1 || targetId === '#') {
+                    e.preventDefault();
+                }
+
+                // If targetId is just '#', scroll to top or do nothing specific
+                if (targetId === '#') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+
+                // Scroll to the element if it exists
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
